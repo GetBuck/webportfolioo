@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ethan Mercado - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+        <div class="header-content fade-in">
+            <h1><span class="border-text">ETHAN</span></h1>
+            <p>GRAPHIC DESIGNER / WEB DEVELOPER</p>
+        </div>
+        <img src="header.png" alt="Header Image" class="fade-in">
+    </header>
+
+    <nav>
+        <a href="#about">ABOUT ME</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#testimonials">TESTIMONIALS</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+    
+    <!-- About Section -->
+    <section id="about" class="fade-in">
+        <div class="container">
+            <div class="card">
+                <h2>About me</h2>
+                <p>
+                    As a passionate front-end developer and graphic designer. I specialize in creating visually appealing websites and user-friendly interfaces. With a foundation in HTML, CSS, and JavaScript, I bring both design and functionality . I believe in the power of collaboration, working closely with my clients to understand their needs and vision.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="fade-in">
+        <div class="container">
+            <div class="card">
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>Adobe Photoshop, Figma</li>
+                    <li>Responsive Web Design</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="fade-in">
+        <div class="container">
+            <div class="card">
+                <h2>Projects</h2>
+                <div class="project">
+                    <p>1st Project.Car Parking System.</p>
+                    <img src="carparking.png" alt="Project 1" class="hover-effect">
+                </div>
+                <div class="project">
+                    <p>2nd Project. Game Development.</p>
+                    <img src="game.png" alt="Project 2" class="hover-effect">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="fade-in">
+        <div class="container">
+            <div class="card">
+                <h2>Testimonials</h2>
+                <div class="testimonial">
+                    <p>"Ethan combines his technicalities with a genuine passion for art. His hardworking nature and dedication to his craft are evident in every project he takes on." - Ralex</p>
+                </div>
+                <div class="testimonial">
+                    <p>"Working with Ethan was a pleasure! He’s a simple, with a big heart for art. His hard work and creativity shine through in the projects he develops." - Emmanuel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
+        <div class="container">
+            <div class="card">
+                <h2>CONTACT</h2>
+                <p>If you'd like to get in touch, feel free to use the form below or email me directly at <a href="mailto:your.email@example.com">ethangeronamercado@gmail.com</a>.</p>
+
+                <!-- Contact Form -->
+                <form action="submit_form.php" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                
+                    
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Ethan Mercado. All rights reserved.</p>
+        <p>
+            <a href="https://www.facebook.com/ethangeronamercado" target="_blank">
+                <i class="fab fa-facebook"></i> FOLLOW ME ON FACEBOOK
+            </a>
+        </p>
+    </footer>
+    
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Scroll to Top functionality
+        const backToTopButton = document.getElementById("backToTop");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Fade-in animation on scroll
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        fadeInElements.forEach(element => observer.observe(element));
+
+        // Toggle mobile navigation menu
+        const menuToggle = document.getElementById('menuToggle');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('open');
+            document.querySelector('nav').classList.toggle('open');
+        });
+    </script>
+
+</body>
+</html>
